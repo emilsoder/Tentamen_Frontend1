@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <!--CSS-->
+    <style>
+        #yellowMainDiv {
+            height: 400px;
+            width: 300px;
+            background-color: yellow;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        #redChildDiv {
+            height: 200px;
+            width: 150px;
+            background-color: #FF0000;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .div1 {
+            float: left;
+            background: grey;
+            width: 33.33333333333333333333333333333%;
+            margin: 0px;
+            padding: 0px 0px;
+        }
+
+        .div2 {
+            background: green;
+            margin: 0px;
+            display: inline-block;
+            width: 33.33333333333333333333333333333%;
+            padding: 0px 0px;
+        }
+
+        .div3 {
+            float: right;
+            background: red;
+            width: 33.33333333333333333333333333333%;
+            margin: 0px;
+            padding: 0px 0px;
+        }
+
+        form {
+            border: 2px solid black;
+            width: 250px;
+        }
+    </style>
+    <!-------------------------->
+
+
+</head>
+<body>
+    <!--UPPGIFT 8-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var h = document.createElement("H1");
+            var t = document.createTextNode("Nackademin");
+            h.appendChild(t);
+
+            document.getElementById("uppgift8").appendChild(h);
+        });
+    </script>
+    <div id="uppgift8"></div>
+    <!-------------------------->
+    <!--UPPGIFT 7-->
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000000;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: inline-block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover {
+                    background-color: #FFFFFF;
+                    color: #000000;
+                }
+    </style>
+    <header>
+        <ul>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </header>
+    <!-------------------------->
+    <!--UPPGIFT 3-->
+    <div class="div1">
+        div1
+    </div>
+    <div class="div2">
+        div2
+    </div>
+    <div class="div3">
+        div3
+    </div>
+    <!-------------------------->
+    <!--UPPGIFT 1 & 2-->
+    <script>
+        function changeColor(id) {
+            document.getElementById(id).style.backgroundColor = "#0000FF";
+        }
+    </script>
+    <div id="yellowMainDiv">
+        <div id="redChildDiv" onclick="changeColor('yellowMainDiv'); return false;"></div>
+    </div>
+    <!-------------------------->
+    <!--UPPGIFT 4-->
+    <script type="text/javascript">
+        var arrayAllaNamn = [];
+        function myFunction() {
+            var textInputElement = document.getElementById("input");
+            arrayAllaNamn.push(textInputElement.value);
+            console.log(arrayAllaNamn);
+        }
+    </script>
+    <form id="uppgift4">
+        <br />
+        <input id="input" type=text>
+        <br />
+        <input type=button onclick="myFunction()" value="Lägg till ett namn" />
+        <br />
+    </form>
+    <!-------------------------->
+    <!--UPPGIFT 5-->
+    <script type="text/javascript">
+        var i = 0;
+        var evenNumbersArray = [];
+        function tiotusenloop() {
+            while (i <= 10000) {
+                i++;
+                var nummer = i;
+                if (nummer % 56 == 0) {
+                    evenNumbersArray.push(nummer);
+                }
+            }
+            var totalSumma = 0;
+            for (var item in evenNumbersArray) {
+                totalSumma += evenNumbersArray[item];
+            }
+
+            var biggestfuckingnumber = Math.max.apply(Math, evenNumbersArray);
+
+            document.getElementById("totalSum").innerHTML = totalSumma;
+            document.getElementById("biggestNumber").innerHTML = biggestfuckingnumber;
+
+            console.log(totalSumma)
+            console.log(Math.max(biggestfuckingnumber));
+        }
+    </script>
+    <form id="uppgift5">
+        <br />
+        <table>
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type=button onclick="tiotusenloop()" value="Kör uppgift 5" /><hr />
+                    </td>
+
+                </tr>
+                <tr>
+                    <th>Total summa: </th>
+                    <td id="totalSum"> </td>
+                </tr>
+                <tr>
+                    <th>Största talet: </th>
+                    <td id="biggestNumber"> </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </form>
+    <!-------------------------->
+    <!--UPPGIFT 6-->
+    <script type="text/javascript">
+        function addToList() {
+            var obj = {
+                name: null,
+                address: null,
+                phone: null
+            }
+
+            obj.name = document.getElementById('nameInput').value;
+            obj.address = document.getElementById('addressInput').value;
+            obj.phone = document.getElementById('phoneInput').value;
+            console.log(obj);
+        };
+    </script>
+    <form>
+        Namn:<br>
+        <input type="text" id="nameInput" value="Namn">
+        <br>
+        Address:<br>
+        <input type="text" id="addressInput" value="Address">
+        <br>
+        Telefon:<br>
+        <input type="text" id="phoneInput" value="Telefon">
+        <br><br>
+        <input type="button" onclick="addToList()" value="OK">
+
+    </form>
+    <!-------------------------->
+
+
+</body>
+</html>
